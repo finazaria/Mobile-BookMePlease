@@ -1,6 +1,6 @@
 {
-    "name": "mobilebmp",
-    "short_name": "mobilebmp",
+    "name": "lab_6",
+    "short_name": "lab_6",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
