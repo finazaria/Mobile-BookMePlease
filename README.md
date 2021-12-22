@@ -22,7 +22,7 @@ https://drive.google.com/file/d/1CMvsVUXc7CpTbd3WDyvG3_C5Pmvpwc72/view?usp=shari
 6. Form Register + Login user
 
 ## Database: 
-- Book Library
+- Book Lib
 - User Favourite Book
 - User Profile
 
