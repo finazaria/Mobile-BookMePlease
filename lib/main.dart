@@ -1,5 +1,7 @@
+import 'package:comment_box/comment/test.dart';
 import 'package:flutter/material.dart';
 
+import './screens/book_comments.dart';
 import './dummy_data.dart';
 import './screens/tabs_screen.dart';
 import './screens/meal_detail_screen.dart';
@@ -114,6 +116,7 @@ class _MyAppState extends State<MyApp> {
         MealDetailScreen.routeName: (ctx) =>
             MealDetailScreen(_toggleFavorite, _isMealFavorite),
         FiltersScreen.routeName: (ctx) => FiltersScreen(_filters, _setFilters),
+        CommentMe.routeName: (ctx) => CommentMe(),
       },
       onGenerateRoute: (settings) {
         print(settings.arguments);
@@ -126,3 +129,20 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
+
+// import 'package:flutter/material.dart';
+// import 'comments.dart';
+
+// void main() {
+//   runApp(MyApp());
+// }
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Comments about ABC',
+//       home: TestMe(),
+//     );
+//   }
+// }
