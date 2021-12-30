@@ -58,7 +58,7 @@ const DUMMY_CATEGORIES = const [
 
 const DUMMY_MEALS = const [
   Meal(
-    id: 'm1',
+    id: '1',
     categories: [
       'c1',
       'c5',
@@ -86,16 +86,16 @@ const DUMMY_MEALS = const [
     // isLactoseFree: true,
   ),
   Meal(
-    id: 'm2',
+    id: '2',
     categories: [
-      'c10',
+      'c4',
     ],
-    title: 'All the Feels',
+    title: 'Before We Were Yours',
     affordability: Affordability.High,
     // complexity: Complexity.Simple,
     imageUrl:
-        'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.amazon.com%2FAll-Feels-Discover-Emotions-Untangle%2Fdp%2F1496441796&psig=AOvVaw0GXk-OYxbn3l0omDQBXVcA&ust=1637300889774000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCKDb86GbofQCFQAAAAAdAAAAABAD',
-    duration: 'Olivia Dade',
+        'https://images-na.ssl-images-amazon.com/images/I/41VcPtNJyeL._SX326_BO1,204,203,200_.jpg',
+    duration: 'Lisa Wingate',
     // ingredients: [
     //   '1 Slice White Bread',
     //   '1 Slice Ham',
@@ -104,7 +104,7 @@ const DUMMY_MEALS = const [
     //   'Butter'
     // ],
     steps: [
-      'Alexander Woodroe has it all. Charm. Sex appeal. Wealth. Fame. A starring role as Cupid on TV’s biggest show, God of the Gates. But the showrunners have wrecked his character, he’s dogged by old demons, and his post-show future remains uncertain. When all that reckless emotion explodes into a bar fight, the tabloids and public agree: his star is falling.'
+      'Memphis, 1939. Twelve-year-old Rill Foss and her four younger siblings live a magical life aboard their family’s Mississippi River shantyboat. But when their father must rush their mother to the hospital one stormy night, Rill is left in charge—until strangers arrive in force. Wrenched from all that is familiar and thrown into a Tennessee Children’s Home Society orphanage, the Foss children are assured that they will soon be returned to their parents—but they quickly realize the dark truth. At the mercy of the facility’s cruel director, Rill fights to keep her sisters and brother together in a world of danger and uncertainty.'
     ],
     isGlutenFree: false,
     isVegan: false,
@@ -112,7 +112,7 @@ const DUMMY_MEALS = const [
     isLactoseFree: false,
   ),
   Meal(
-    id: 'm3',
+    id: '3',
     categories: [
       'c9',
     ],
@@ -120,7 +120,7 @@ const DUMMY_MEALS = const [
     affordability: Affordability.Legendary,
     // complexity: Complexity.Simple,
     imageUrl:
-        'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2Flast-olympian-rick-riordan%2F1100260665&psig=AOvVaw3y0RJiHSxkY3_3Wu9aRjHK&ust=1637301358497000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPix4YKdofQCFQAAAAAdAAAAABAD',
+        'https://images-na.ssl-images-amazon.com/images/I/51BfYSYSfxL._SX336_BO1,204,203,200_.jpg',
     duration: 'Rick Riordan',
     // ingredients: [
     //   '300g Cattle Hack',
@@ -147,12 +147,11 @@ Soon a mystery unfolds and together with his friends—one a satyr and the other
     categories: [
       'c8',
     ],
-    title: 'April in Spain',
+    title: 'Age of Myth',
     affordability: Affordability.Low,
     // complexity: Complexity.Challenging,
-    imageUrl:
-        'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.kobo.com%2Fus%2Fen%2Febook%2Fapril-in-spain&psig=AOvVaw02qtl-a-rGYeejt9RslRep&ust=1637301521037000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCIiht-CdofQCFQAAAAAdAAAAABAD',
-    duration: 'John Banville',
+    imageUrl: 'https://m.media-amazon.com/images/I/51N8Yy2eTdL.jpg',
+    duration: 'Michael J. Sullivan',
     // ingredients: [
     //   '8 Veal Cutlets',
     //   '4 Eggs',
@@ -164,10 +163,7 @@ Soon a mystery unfolds and together with his friends—one a satyr and the other
     //   'Lemon Slices'
     // ],
     steps: [
-      ''' On the idyllic coast of San Sebastian, Spain, Dublin pathologist Quirke is struggling to relax, despite the beaches, cafés and the company of his disarmingly lovely wife. When he glimpses a familiar face in the twilight at Las Acadas bar, 
-          it's hard at first to tell whether his imagination is just running away with him.
-
-          cause this young woman can't be April Latimer. She was murdered by her brother, years ago—the conclusion to an unspeakable scandal that shook one of Ireland's foremost political dynasties. '''
+      ' Since time immemorial, humans have worshipped the gods they call Fhrey, truly a race apart: invincible in battle, masters of magic, and seemingly immortal. But when a god falls to a human blade, the balance of power between humans and those they thought were gods changes forever.'
     ],
     isGlutenFree: false,
     isVegan: false,
@@ -177,14 +173,14 @@ Soon a mystery unfolds and together with his friends—one a satyr and the other
   Meal(
     id: 'm5',
     categories: [
-      'c7',
+      'c1',
     ],
-    title: 'The City Beautiful',
+    title: 'Primary Threat',
     affordability: Affordability.Medium,
     // complexity: Complexity.Simple,
     imageUrl:
-        'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.goodreads.com%2Fbook%2Fshow%2F55743832-the-city-beautiful&psig=AOvVaw0w1KGtKpp4tZRV_pigfGvT&ust=1637301682047000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCLDZ25ueofQCFQAAAAAdAAAAABAD',
-    duration: 'Aden Polydoros',
+        'https://images-na.ssl-images-amazon.com/images/I/51C0dBfrBwL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg',
+    duration: 'Jack Mars',
     // ingredients: [
     //   'Arugula',
     //   'Lamb\'s Lettuce',

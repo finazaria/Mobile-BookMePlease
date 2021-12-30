@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_guide/screens/book_comments.dart';
 
 import '../dummy_data.dart';
 
@@ -9,6 +10,15 @@ class MealDetailScreen extends StatelessWidget {
   final Function isFavorite;
 
   MealDetailScreen(this.toggleFavorite, this.isFavorite);
+
+  void addComments(BuildContext ctx, String mealId) {
+    // Navigator.of(ctx).pushNamed(
+    //   CommentMe.routeName,
+    //   arguments: {},
+    // );
+    Navigator.push(
+        ctx, MaterialPageRoute(builder: (context) => CommentMe(mealId)));
+  }
 
   Widget buildSectionTitle(BuildContext context, String text) {
     return Container(
@@ -54,21 +64,16 @@ class MealDetailScreen extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            // buildSectionTitle(context, 'Ingredients'),
-            // buildContainer(
-            //   ListView.builder(
-            //     itemBuilder: (ctx, index) => Card(
-            //           color: Theme.of(context).accentColor,
-            //           child: Padding(
-            //               padding: EdgeInsets.symmetric(
-            //                 vertical: 5,
-            //                 horizontal: 10,
-            //               ),
-            //               child: Text(selectedMeal.ingredients[index])),
-            //         ),
-            //     itemCount: selectedMeal.ingredients.length,
-            //   ),
-            // ),
+            Container(
+              margin: EdgeInsets.all(25),
+              child: FlatButton(
+                child: Text(
+                  'Comments',
+                  style: TextStyle(fontSize: 20.0),
+                ),
+                onPressed: () => addComments(context, mealId),
+              ),
+            ),
             buildSectionTitle(context, 'Steps'),
             buildContainer(
               ListView.builder(
