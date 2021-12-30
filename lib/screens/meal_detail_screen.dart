@@ -11,11 +11,13 @@ class MealDetailScreen extends StatelessWidget {
 
   MealDetailScreen(this.toggleFavorite, this.isFavorite);
 
-  void addComments(BuildContext ctx) {
-    Navigator.of(ctx).pushNamed(
-      CommentMe.routeName,
-      arguments: {},
-    );
+  void addComments(BuildContext ctx, String mealId) {
+    // Navigator.of(ctx).pushNamed(
+    //   CommentMe.routeName,
+    //   arguments: {},
+    // );
+    Navigator.push(
+        ctx, MaterialPageRoute(builder: (context) => CommentMe(mealId)));
   }
 
   Widget buildSectionTitle(BuildContext context, String text) {
@@ -69,7 +71,7 @@ class MealDetailScreen extends StatelessWidget {
                   'Comments',
                   style: TextStyle(fontSize: 20.0),
                 ),
-                onPressed: () => addComments(context),
+                onPressed: () => addComments(context, mealId),
               ),
             ),
             buildSectionTitle(context, 'Steps'),

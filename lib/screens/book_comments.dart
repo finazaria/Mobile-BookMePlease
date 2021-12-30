@@ -1,8 +1,18 @@
 import 'package:comment_box/comment/comment.dart';
 import 'package:flutter/material.dart';
+import '../comments_model.dart';
+import '../repository.dart';
+
+String book;
 
 class CommentMe extends StatefulWidget {
   static const routeName = '/comments';
+  String bookId;
+
+  CommentMe(this.bookId) {
+    print("i got you: " + this.bookId);
+    book = bookId;
+  }
 
   @override
   _CommentMeState createState() => _CommentMeState();
@@ -11,6 +21,20 @@ class CommentMe extends StatefulWidget {
 class _CommentMeState extends State<CommentMe> {
   final formKey = GlobalKey<FormState>();
   final TextEditingController commentController = TextEditingController();
+  List<Comments> listComments = [];
+  RepoUhuy repo = RepoUhuy();
+
+  getData() async {
+    listComments = await repo.getData(book);
+  }
+
+  @override
+  void initState() {
+    getData();
+    print("masuk init state");
+    super.initState();
+  }
+
   List filedata = [
     {
       'name': 'Adeleye Ayodeji',
@@ -34,10 +58,10 @@ class _CommentMeState extends State<CommentMe> {
     },
   ];
 
-  Widget commentChild(data) {
+  Widget commentChild() {
     return ListView(
       children: [
-        for (var i = 0; i < data.length; i++)
+        for (int i = 0; i < listComments.length; i++)
           Padding(
             padding: const EdgeInsets.fromLTRB(2.0, 8.0, 2.0, 0.0),
             child: ListTile(
@@ -54,14 +78,14 @@ class _CommentMeState extends State<CommentMe> {
                       borderRadius: new BorderRadius.all(Radius.circular(50))),
                   child: CircleAvatar(
                       radius: 50,
-                      backgroundImage: NetworkImage(data[i]['pic'] + "$i")),
+                      backgroundImage: NetworkImage(filedata[i]['pic'] + "$i")),
                 ),
               ),
               title: Text(
-                data[i]['name'],
+                listComments[i].name,
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
-              subtitle: Text(data[i]['message']),
+              subtitle: Text(listComments[i].comment),
             ),
           )
       ],
@@ -79,7 +103,7 @@ class _CommentMeState extends State<CommentMe> {
         child: CommentBox(
           userImage:
               "https://lh3.googleusercontent.com/a-/AOh14GjRHcaendrf6gU5fPIVd8GIl1OgblrMMvGUoCBj4g=s400",
-          child: commentChild(filedata),
+          child: commentChild(),
           labelText: 'Write a comment...',
           withBorder: false,
           errorText: 'Comment cannot be blank',
@@ -89,11 +113,13 @@ class _CommentMeState extends State<CommentMe> {
               setState(() {
                 var value = {
                   'name': 'New User',
-                  'pic':
-                      'https://lh3.googleusercontent.com/a-/AOh14GjRHcaendrf6gU5fPIVd8GIl1OgblrMMvGUoCBj4g=s400',
-                  'message': commentController.text
+                  'created_on': '211101',
+                  'book': 7,
+                  // 'pic':
+                  //     'https://lh3.googleusercontent.com/a-/AOh14GjRHcaendrf6gU5fPIVd8GIl1OgblrMMvGUoCBj4g=s400',
+                  'comment': commentController.text
                 };
-                filedata.insert(0, value);
+                listComments.insert(0, Comments.fromJson(value));
               });
               commentController.clear();
               FocusScope.of(context).unfocus();

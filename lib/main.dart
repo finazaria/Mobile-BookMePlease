@@ -9,6 +9,8 @@ import './screens/category_meals_screen.dart';
 import './screens/filters_screen.dart';
 import './screens/categories_screen.dart';
 import './models/meal.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 
 void main() => runApp(MyApp());
 
@@ -116,7 +118,7 @@ class _MyAppState extends State<MyApp> {
         MealDetailScreen.routeName: (ctx) =>
             MealDetailScreen(_toggleFavorite, _isMealFavorite),
         FiltersScreen.routeName: (ctx) => FiltersScreen(_filters, _setFilters),
-        CommentMe.routeName: (ctx) => CommentMe(),
+        CommentMe.routeName: (ctx) => CommentMe("1"),
       },
       onGenerateRoute: (settings) {
         print(settings.arguments);
