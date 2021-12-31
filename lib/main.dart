@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_guide/widgets/edit_profile_picture.dart';
 import './page/profile_page.dart';
+import 'package:flutter_complete_guide/page/add_interest.dart';
 
 void main() => runApp(MyApp());
 
@@ -26,6 +27,7 @@ const MaterialColor bmpYellow = const MaterialColor(
 );
 
 class _MyAppState extends State<MyApp> {
+
 
   @override
   Widget build(BuildContext context) {
@@ -53,6 +55,7 @@ class _MyAppState extends State<MyApp> {
       initialRoute: '/profile-page',
       routes: {'/profile-page' : (context) => ProfilePage(),
       '/edit-profile-picture' : (context) => EditProfilePicture(),
+      '/add-interest' : (context) => InterestFormStateful(),
       }
 
     );

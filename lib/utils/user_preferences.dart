@@ -7,6 +7,9 @@ class UserPreferences {
     name: 'Alfina Azaria',
     email: 'alfinazaria32@gmail.com',
     memberSince: 'Jan 13, 2021',
+    interests : [
+      'Fiction', 'Non-Fiction', 'Self-Development',
+    ],
     // Ini datanya belom connect sama database, cuma vanilla aja
 
   );
