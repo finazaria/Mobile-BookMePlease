@@ -11,10 +11,9 @@ Fasilkom UI, Semester Ganjil 2021/2022
 6. Bima Sudarsono Adinsa 1906399083
 
 ## APK Link
-https://drive.google.com/file/d/1CMvsVUXc7CpTbd3WDyvG3_C5Pmvpwc72/view?usp=sharing
-
+https://drive.google.com/file/d/17KgqZggtQ8yjpt0vDIa_zvo-yrjiFQbb/view?usp=sharing
 ## Modul
-1. Book Library + Form search filter
+1. Book Library
 2. Comments about this book + Form submit comment
 3. User Profile Page + Form profile edit
 4. Page Form Rekomendasi Buku
@@ -33,11 +32,8 @@ Pandemi covid-19 yang menggemparkan dunia tentunya memaksa seluruh manusia untuk
 
 
 
-### 1) Book Library + Form search filter (Bimabara Sukma Muryanto)
+### 1) Book Library (Bimabara Sukma Muryanto)
 Book library merupakan page untuk menampilkan data buku berdasarkan genrenya, jadi pengguna ditampilkan beberapa genre buku lalu bisa klik genre tersebut dan pengguna bisa melihat buku-buku apa saja yang ada di BookmePlease dengan genre tersebut.
-
-Lalu search merupakan fitur dimana pengguna bisa searching buku berdasarkan judul atau authornya, pengguna bisa mengisi form dengan keywoard judul atau author yang ingin dicari, kemudian klik tombol cari, nanti sistem akan menampilkan buku-buku apa saja yang memiliki judul atau author dengan keywoard yang di input tadi.
-
 
 ### 2) Modul Comments about this book + Form submit comment (Setasena Randata Ramadanie)
 Modul Comments about this book merupakan salah satu bentuk perwujudan utama dalam tercapainya tujuan BookMePlease. Modul ini memungkinkan para user untuk menanggapi suatu buku yang pernah dibaca oleh mereka sehingga mereka dapat memberikan rekomendasi kepada user lainnya untuk mengatasi kebosanan saat dirumah. Pada modul ini, user dapat memilih buku yang mereka inginkan melalui Modul Book Library, yang selanjutnya akan ditampilkan Form untuk user mengisi komentar mereka terkait buku yang mereka pilih
