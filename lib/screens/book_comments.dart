@@ -2,6 +2,7 @@ import 'package:comment_box/comment/comment.dart';
 import 'package:flutter/material.dart';
 import '../comments_model.dart';
 import '../repository.dart';
+import '../main.dart';
 
 String book;
 
@@ -97,7 +98,7 @@ class _CommentMeState extends State<CommentMe> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Comment Page"),
-        backgroundColor: Colors.pink,
+        backgroundColor: bmpYellow,
       ),
       body: Container(
         child: CommentBox(
