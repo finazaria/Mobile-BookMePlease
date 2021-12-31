@@ -1,10 +1,12 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 import '../widgets/main_drawer.dart';
 import './favorites_screen.dart';
 import './categories_screen.dart';
 import '../models/meal.dart';
-import 'searchBook.dart';
+import './searchBook.dart';
 
 class TabsScreen extends StatefulWidget {
   final List<Meal> favoriteMeals;
@@ -15,6 +17,56 @@ class TabsScreen extends StatefulWidget {
   _TabsScreenState createState() => _TabsScreenState();
 }
 
+// class CustomSearchDelegate extends SearchDelegate {
+//   List<Meal> searchBook;
+
+//   List<Widget> buildAction(BuildContext context) {
+//     return [
+//       IconButton(
+//         icon: const Icon(Icons.clear),
+//         onPressed: () {
+//           // query ' ' ;
+//         },
+//       ),
+//     ];
+//   }
+
+//   @override
+//   Widget buildLeading(BuildContext context) {
+//     return IconButton(
+//         onPressed: () {
+//           close(context, null);
+//         },
+//         icon: const Icon(Icons.arrow_back));
+//   }
+
+//   @override
+//   Widget buildResult(BuildContext context) {
+//     List<Meal> matchQuery = [];
+//     String books;
+
+//     for (var book in searchBook) {
+//       books = book.toString();
+//       if (books.toLowerCase().contains(query.toLowerCase())) {
+//         matchQuery.add(book);
+//       }
+//     }
+//   }
+
+//   @override
+//   Widget buildSugesstions(BuildContext context) {
+//     List<Meal> matchQuery = [];
+//     String books;
+
+//     for (var book in searchBook) {
+//       books = book.toString();
+//       if (books.toLowerCase().contains(query.toLowerCase())) {
+//         matchQuery.add(book);
+//       }
+//     }
+//   }
+// }
+
 class _TabsScreenState extends State<TabsScreen> {
   List<Map<String, Object>> _pages;
   int _selectedPageIndex = 0;
@@ -24,7 +76,7 @@ class _TabsScreenState extends State<TabsScreen> {
     _pages = [
       {
         'page': CategoriesScreen(),
-        'title': 'Kategori',
+        'title': 'Daftar Buku',
       },
       // {
       //   'page': SearchScreen(),
@@ -49,6 +101,16 @@ class _TabsScreenState extends State<TabsScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(_pages[_selectedPageIndex]['title']),
+        // actions: [
+        //   IconButton(
+        //       onPressed: () {
+        //         showSearch(
+        //           context: context,
+        //           delegate: CustomSearchDelegate(),
+        //         );
+        //       },
+        //       icon: const Icon(Icons.search))
+        // ],
       ),
       drawer: MainDrawer(),
       body: _pages[_selectedPageIndex]['page'],
@@ -63,8 +125,13 @@ class _TabsScreenState extends State<TabsScreen> {
           BottomNavigationBarItem(
             backgroundColor: Theme.of(context).primaryColor,
             icon: Icon(Icons.category),
-            title: Text('Kategori'),
+            title: Text('Daftar Buku'),
           ),
+          // BottomNavigationBarItem(
+          //   backgroundColor: Theme.of(context).primaryColor,
+          //   icon: Icon(Icons.search),
+          //   title: Text('Search'),
+          // ),
           BottomNavigationBarItem(
             backgroundColor: Theme.of(context).primaryColor,
             icon: Icon(Icons.star),
