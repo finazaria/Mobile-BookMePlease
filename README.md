@@ -13,7 +13,7 @@ Fasilkom UI, Semester Ganjil 2021/2022
 ## APK Link
 https://drive.google.com/file/d/17KgqZggtQ8yjpt0vDIa_zvo-yrjiFQbb/view?usp=sharing
 ## Modul
-1. Book Library + Form search filter
+1. Book Library
 2. Comments about this book + Form submit comment
 3. User Profile Page + Form profile edit
 4. Page Form Rekomendasi Buku
