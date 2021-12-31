@@ -1,4 +1,4 @@
-import 'dart:html';
+// import 'dart:html';
 
 import 'package:flutter/material.dart';
 
@@ -9,7 +9,7 @@ import '../models/meal.dart';
 import './searchBook.dart';
 
 class TabsScreen extends StatefulWidget {
-  final List<Meal> favoriteMeals;
+  final List<Book> favoriteMeals;
 
   TabsScreen(this.favoriteMeals);
 

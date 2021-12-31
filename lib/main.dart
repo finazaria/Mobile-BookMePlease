@@ -11,6 +11,7 @@ import './screens/categories_screen.dart';
 import './models/meal.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import '../repository.dart';
 
 void main() => runApp(MyApp());
 
@@ -42,34 +43,39 @@ class _MyAppState extends State<MyApp> {
     'vegan': false,
     'vegetarian': false,
   };
-  List<Meal> _availableMeals = DUMMY_MEALS;
-  List<Meal> _favoriteMeals = [];
+  List<Book> _availableMeals = DUMMY_MEALS;
+  List<Book> _favoriteMeals = [];
+  RepoUhuy repo = RepoUhuy();
 
-  void _setFilters(Map<String, bool> filterData) {
-    setState(() {
-      _filters = filterData;
+  // getData() async {
+  //   _availableMeals = await repo.getData(book);
+  // }
 
-      _availableMeals = DUMMY_MEALS.where((meal) {
-        if (_filters['gluten'] && !meal.isGlutenFree) {
-          return false;
-        }
-        if (_filters['lactose'] && !meal.isLactoseFree) {
-          return false;
-        }
-        if (_filters['vegan'] && !meal.isVegan) {
-          return false;
-        }
-        if (_filters['vegetarian'] && !meal.isVegetarian) {
-          return false;
-        }
-        return true;
-      }).toList();
-    });
-  }
+  // void _setFilters(Map<String, bool> filterData) {
+  //   setState(() {
+  //     _filters = filterData;
 
-  void _toggleFavorite(String mealId) {
+  //     _availableMeals = DUMMY_MEALS.where((meal) {
+  //       if (_filters['gluten'] && !meal.isGlutenFree) {
+  //         return false;
+  //       }
+  //       if (_filters['lactose'] && !meal.isLactoseFree) {
+  //         return false;
+  //       }
+  //       if (_filters['vegan'] && !meal.isVegan) {
+  //         return false;
+  //       }
+  //       if (_filters['vegetarian'] && !meal.isVegetarian) {
+  //         return false;
+  //       }
+  //       return true;
+  //     }).toList();
+  //   });
+  // }
+
+  void _toggleFavorite(String bookId) {
     final existingIndex =
-        _favoriteMeals.indexWhere((meal) => meal.id == mealId);
+        _favoriteMeals.indexWhere((meal) => meal.id == bookId);
     if (existingIndex >= 0) {
       setState(() {
         _favoriteMeals.removeAt(existingIndex);
@@ -77,7 +83,7 @@ class _MyAppState extends State<MyApp> {
     } else {
       setState(() {
         _favoriteMeals.add(
-          DUMMY_MEALS.firstWhere((meal) => meal.id == mealId),
+          _availableMeals.firstWhere((meal) => meal.id == bookId),
         );
       });
     }
@@ -115,9 +121,9 @@ class _MyAppState extends State<MyApp> {
         '/': (ctx) => TabsScreen(_favoriteMeals),
         CategoryMealsScreen.routeName: (ctx) =>
             CategoryMealsScreen(_availableMeals),
-        MealDetailScreen.routeName: (ctx) =>
-            MealDetailScreen(_toggleFavorite, _isMealFavorite),
-        FiltersScreen.routeName: (ctx) => FiltersScreen(_filters, _setFilters),
+        // MealDetailScreen.routeName: (ctx) =>
+        //     MealDetailScreen(_toggleFavorite, _isMealFavorite),
+        // FiltersScreen.routeName: (ctx) => FiltersScreen(_filters, _setFilters),
         CommentMe.routeName: (ctx) => CommentMe("1"),
       },
       onGenerateRoute: (settings) {

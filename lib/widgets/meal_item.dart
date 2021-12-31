@@ -2,19 +2,22 @@ import 'package:flutter/material.dart';
 
 import '../screens/meal_detail_screen.dart';
 import '../models/meal.dart';
+import 'package:flutter_complete_guide/screens/book_comments.dart';
+import '../screens/meal_detail_screen.dart';
 
 class MealItem extends StatelessWidget {
-  final String id;
+  final int id;
   final String title;
-  final String imageUrl;
+  final String imageUrl =
+      'https://cdn.pixabay.com/photo/2021/01/21/15/54/books-5937716_960_720.jpg';
   final String duration;
   // final Complexity complexity;
-  final Affordability rating;
+  final String rating;
 
   MealItem({
     @required this.id,
     @required this.title,
-    @required this.imageUrl,
+    // @required this.imageUrl,
     @required this.rating,
     // @required this.complexity,
     @required this.duration,
@@ -36,42 +39,51 @@ class MealItem extends StatelessWidget {
   //   }
   // }
 
-  String get affordabilityText {
-    switch (rating) {
-      case Affordability.Legendary:
-        return 'Legendary';
-        break;
-      case Affordability.High:
-        return 'High';
-        break;
-      case Affordability.Medium:
-        return 'Medium';
-        break;
-      case Affordability.Low:
-        return 'Low';
-        break;
-      default:
-        return 'Unknown';
-    }
-  }
+  // String get affordabilityText {
+  //   switch (rating) {
+  //     case Affordability.Legendary:
+  //       return 'Legendary';
+  //       break;
+  //     case Affordability.High:
+  //       return 'High';
+  //       break;
+  //     case Affordability.Medium:
+  //       return 'Medium';
+  //       break;
+  //     case Affordability.Low:
+  //       return 'Low';
+  //       break;
+  //     default:
+  //       return 'Unknown';
+  //   }
+  // }
 
-  void selectMeal(BuildContext context) {
-    Navigator.of(context)
-        .pushNamed(
-      MealDetailScreen.routeName,
-      arguments: id,
-    )
-        .then((result) {
-      if (result != null) {
-        // removeItem(result);
-      }
-    });
+  // void selectMeal(BuildContext context) {
+  //   Navigator.of(context)
+  //       .pushNamed(
+  //     MealDetailScreen.routeName,
+  //     arguments: id,
+  //   )
+  //       .then((result) {
+  //     if (result != null) {
+  //       // removeItem(result);
+  //     }
+  //   });
+  // }
+
+  void addComments(BuildContext ctx, String mealId) {
+    // Navigator.of(ctx).pushNamed(
+    //   CommentMe.routeName,
+    //   arguments: {},
+    // );
+    Navigator.push(
+        ctx, MaterialPageRoute(builder: (context) => CommentMe(mealId)));
   }
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => selectMeal(context),
+      // onTap: () => selectMeal(context),
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
@@ -124,9 +136,7 @@ class MealItem extends StatelessWidget {
                 children: <Widget>[
                   Row(
                     children: <Widget>[
-                      Icon(
-                        Icons.schedule,
-                      ),
+                      Icon(Icons.person),
                       SizedBox(
                         width: 6,
                       ),
@@ -146,15 +156,46 @@ class MealItem extends StatelessWidget {
                   // ),
                   Row(
                     children: <Widget>[
-                      Icon(
-                        Icons.attach_money,
-                      ),
+                      Icon(Icons.book),
                       SizedBox(
                         width: 6,
                       ),
-                      Text(affordabilityText),
+                      Text(rating),
                     ],
                   ),
+                  Row(
+                    children: <Widget>[
+                      IconButton(
+                          onPressed: () =>
+                              addComments(context, this.id.toString()),
+                          icon: const Icon(Icons.comment)),
+                      SizedBox(
+                        width: 2,
+                      ),
+
+                      // Container(
+                      //   child: FlatButton(
+                      //     // child: Text(
+                      //     //   'Comments',
+                      //     //   style: TextStyle(fontSize: 12.0),
+                      //     // ),
+                      //     onPressed: () =>
+                      //         addComments(context, this.id.toString()),
+                      //   ),
+                      // ),
+                    ],
+                  ),
+
+                  // Row(
+                  //   children: [
+                  //     IconButton(
+                  //         onPressed: () => toggleFavorite(mealId),
+                  //         icon: const Icon(Icons.comment)),
+                  //     SizedBox(
+                  //       width: 2,
+                  //     ),
+                  //   ],
+                  // ),
                 ],
               ),
             ),

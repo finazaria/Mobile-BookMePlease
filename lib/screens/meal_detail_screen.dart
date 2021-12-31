@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_guide/screens/book_comments.dart';
 
-import '../dummy_data.dart';
+// import '../dummy_data.dart';
+import 'category_meals_screen.dart';
+import '../main.dart';
 
 class MealDetailScreen extends StatelessWidget {
   static const routeName = '/meal-detail';
@@ -48,22 +50,25 @@ class MealDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final mealId = ModalRoute.of(context).settings.arguments as String;
-    final selectedMeal = DUMMY_MEALS.firstWhere((meal) => meal.id == mealId);
+    final selectedMeal =
+        getDummyMeals().firstWhere((meal) => meal.id == mealId);
+    print(mealId);
+    print(selectedMeal);
     return Scaffold(
       appBar: AppBar(
-        title: Text('${selectedMeal.title}'),
+        title: Text('${selectedMeal.Name}'),
       ),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Container(
-              height: 300,
-              width: double.infinity,
-              child: Image.network(
-                selectedMeal.imageUrl,
-                fit: BoxFit.cover,
-              ),
-            ),
+            // Container(
+            //   height: 300,
+            //   width: double.infinity,
+            //   child: Image.network(
+            //     selectedMeal.Background_Photo,
+            //     fit: BoxFit.cover,
+            //   ),
+            // ),
             Container(
               margin: EdgeInsets.all(25),
               child: FlatButton(
@@ -83,14 +88,14 @@ class MealDetailScreen extends StatelessWidget {
                       leading: CircleAvatar(
                         child: Text('# ${(index + 1)}'),
                       ),
-                      title: Text(
-                        selectedMeal.steps[index],
-                      ),
+                      // title: Text(
+                      //   selectedMeal.steps[index],
+                      // ),
                     ),
                     Divider()
                   ],
                 ),
-                itemCount: selectedMeal.steps.length,
+                // itemCount: selectedMeal.steps.length,
               ),
             ),
           ],

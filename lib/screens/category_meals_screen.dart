@@ -2,13 +2,22 @@ import 'package:flutter/material.dart';
 
 import '../widgets/meal_item.dart';
 import '../models/meal.dart';
+import '../repository.dart';
+
+List<Book> DUMMY_MEALS = [];
+RepoUhuy repo = RepoUhuy();
+
+getDummyMeals() {
+  return DUMMY_MEALS;
+}
 
 class CategoryMealsScreen extends StatefulWidget {
   static const routeName = '/category-meals';
 
-  final List<Meal> availableMeals;
+  List<Book> availableMeals = [];
 
   CategoryMealsScreen(this.availableMeals);
+  // CategoryMealsScreen();
 
   @override
   _CategoryMealsScreenState createState() => _CategoryMealsScreenState();
@@ -16,12 +25,23 @@ class CategoryMealsScreen extends StatefulWidget {
 
 class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
   String categoryTitle;
-  List<Meal> displayedMeals;
+  List<Book> displayedMeals;
   var _loadedInitData = false;
+
+  getData() async {
+    DUMMY_MEALS = await repo.getDataBook();
+    // print("-------------");
+    // print(DUMMY_MEALS);
+  }
+
+  getDummyMeals() {
+    return DUMMY_MEALS;
+  }
 
   @override
   void initState() {
-    // ...
+    getData();
+    print("masuk init state");
     super.initState();
   }
 
@@ -32,9 +52,26 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
           ModalRoute.of(context).settings.arguments as Map<String, String>;
       categoryTitle = routeArgs['title'];
       final categoryId = routeArgs['id'];
+      widget.availableMeals = DUMMY_MEALS;
       displayedMeals = widget.availableMeals.where((meal) {
-        return meal.categories.contains(categoryId);
+        // print(meal.Genre);
+        // print(categoryTitle);
+        return meal.Genre == categoryTitle;
       }).toList();
+
+      // print(meal.Genre);
+      // print(categoryTitle);
+
+      // print(displayedMeals.isEmpty);
+      // print("masuk didchangeDependemcies");
+
+      // for (int i = 0; i < displayedMeals.length; i++) {
+      //   print(displayedMeals[i].id);
+      //   print(displayedMeals[i].Name);
+      //   print(displayedMeals[i].Author);
+      //   print(displayedMeals[i].Genre);
+      //   print("----------------");
+      // }
       _loadedInitData = true;
     }
     super.didChangeDependencies();
@@ -56,10 +93,10 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
         itemBuilder: (ctx, index) {
           return MealItem(
             id: displayedMeals[index].id,
-            title: displayedMeals[index].title,
-            imageUrl: displayedMeals[index].imageUrl,
-            duration: displayedMeals[index].duration,
-            rating: displayedMeals[index].affordability,
+            title: displayedMeals[index].Name,
+            // imageUrl: DUMMY_MEALS[index].Background_Photo,
+            duration: displayedMeals[index].Author,
+            rating: displayedMeals[index].Genre,
             // complexity: displayedMeals[index].complexity,
           );
         },

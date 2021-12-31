@@ -46,9 +46,9 @@ class MainDrawer extends StatelessWidget {
           buildListTile('Buku', Icons.restaurant, () {
             Navigator.of(context).pushReplacementNamed('/');
           }),
-          buildListTile('Filter', Icons.settings, () {
-            Navigator.of(context).pushReplacementNamed(FiltersScreen.routeName);
-          }),
+          // buildListTile('Filter', Icons.settings, () {
+          //   Navigator.of(context).pushReplacementNamed(FiltersScreen.routeName);
+          // }),
         ],
       ),
     );
