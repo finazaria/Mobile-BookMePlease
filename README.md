@@ -18,15 +18,15 @@ The COVID-19 pandemic that has shocked the world has forced people to move towar
 
 ## Features
 1. Book Library
-2. Comments about this book + Form submit comment
-3. User Profile Page + Form profile edit
-4. Page Form Rekomendasi Buku
-5. Form Trivia Quiz book 
-6. Form Register + Login user
+2. Comments About This Book + Submit Comment Form
+3. User's Profile Page + Edit Profile Form
+4. Book Recommendation Form
+5. Book's Trivia Quiz Form 
+6. Register Form + User Login
 
 ## Database: 
-- Book Lib
-- User Favourite Book
+- Book Library
+- User's Favourite Book
 - User Profile
 
 ## Feature Discription
