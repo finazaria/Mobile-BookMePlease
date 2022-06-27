@@ -31,26 +31,26 @@ The COVID-19 pandemic that has shocked the world has forced people to move towar
 
 ## Feature Discription
 
-### 1. Book Library (Bimabara Sukma Muryanto)
+### 1. Book Library (Done by Bimabara Sukma Muryanto)
 Book Library is a page to display book data by genre. Users are shown several genres of books and then can click on them and see what books are on BookmePlease with those genres.
 
-### 2. Comments About This Book + Submit Comment Form (Setasena Randata Ramadanie)
+### 2. Comments About This Book + Submit Comment Form (Done by Setasena Randata Ramadanie)
 The "Comment About This Book" Feature is the main form of embodiment in achieving BookMePlease's goals. This feature allows users to respond to books they have read so that they can provide recommendations to other users to overcome boredom at home. In this feature, users can select the desired book through the "Book Library" feature, which will then display a form for users to fill in comments about the book they have selected.
 
 The widgets implemented in this feature are general widgets such as layouting, padding, and so on. This feature needs to have a Form widget to receive comments from users on the books they choose, which will then be processed using a one-to-many relationship because a book can have many comments. This causes the database that has been placed on Django to need to be updated so that user comments will also be stored in the Django database
 
-### 3. User Profile Page + Edit Profile Form (Alfina Azaria)
+### 3. User Profile Page + Edit Profile Form (Done by Alfina Azaria)
 User Profile Page is a form of implementation of a user profile page that was originally intended for websites which will then be converted into a mobile app form with the help of the Flutter Framework. This User Profile Page stores data about user profiles such as username, profile photo, date of registering as a user on BookMePlease, as well as genres of books that the user liked. Those data will be stored in a Django database. In this feature, users can change their profile photos and book interests. Changes to these data will also be saved in the Django database.
 
 This feature implements common widgets such as Container, Text, Column, Row, Icon, and Button. This feature will also implement CheckboxListTile which will later be used to implement the Book Interests Form. With CheckboxListTile, users can modify and select one or more book genres that they like.
 
-### 4. Book Recommendations Form Page (Marthin Daniel Theo Gratia)
+### 4. Book Recommendations Form Page (Done by Marthin Daniel Theo Gratia)
 ** Soon to be filled
 
-### 5. Book's Trivia Quiz Form  (Muhammad Faras Baginda)
+### 5. Book's Trivia Quiz Form  (Done by Muhammad Faras Baginda)
 This Book Trivia Quiz feature will provide interesting questions about the book. The Trivia Quiz in this mobile app has the same questions as those on the BookMePlease's website. All data related to this quiz will be integrated with the database on the BookMePlease's website. This feature implements simple widgets such as Padding, Layout, and others.
 
-### 6. Register Form + User Login + Add User's Interest Form (Bima Sudarsono Adinsa)
+### 6. Register Form + User Login + Add User's Interest Form (Done by Bima Sudarsono Adinsa)
 Register Form, User Login, and Add User's Interest Form are forms of user authentication to interact with the features contained in BookMePlease as a User. This authentication simultaneously separates and distinguishes the features that a user can use on BookMePlease between registered users and ordinary users who are not registered or anonymous. There are 3 kinds of authentication processes, which is user register, user login, and user logout.
 
 There is also a form to add the genre of the book that the user is interested in which will be compiled into the "Add User's Interest" feature. Data related to the user's interest and authentication feature in this mobile app will be integrated with the Django BookMePlease website which was compiled in the previous project.
