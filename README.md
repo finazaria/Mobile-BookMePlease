@@ -40,19 +40,19 @@ The "Comment About This Book" Feature is the main form of embodiment in achievin
 The widgets implemented in this feature are general widgets such as layouting, padding, and so on. This feature needs to have a Form widget to receive comments from users on the books they choose, which will then be processed using a one-to-many relationship because a book can have many comments. This causes the database that has been placed on Django to need to be updated so that user comments will also be stored in the Django database
 
 ### 3. User Profile Page + Edit Profile Form (Alfina Azaria)
-Modul User Profile Page merupakan bentuk implementasi user profile page yang pada awalnya diperuntukkan bagi website yang kemudian akan diubah menjadi bentuk mobile app dengan bantuan framework flutter. Modul User Profile Page ini menyimpan data-data mengenai profil user seperti nama user, foto profil, tanggal mendaftar sebagai user pada BookMePlease, serta genre buku yang digemari atau interest pada suatu database django. Di modul ini, user dapat mengubah foto profil dan book interest mereka. Perubahan data-data tersebut juga akan disimpan pada database django.
+User Profile Page is a form of implementation of a user profile page that was originally intended for websites which will then be converted into a mobile app form with the help of the Flutter Framework. This User Profile Page stores data about user profiles such as username, profile photo, date of registering as a user on BookMePlease, as well as genres of books that the user liked. Those data will be stored in a Django database. In this feature, users can change their profile photos and book interests. Changes to these data will also be saved in the Django database.
 
-Modul ini mengimplementasikan widget-widget umum seperti Container, Text, Column, Row, Icon, dan Button. Modul ini juga akan mengimplementasikan CheckboxListTile yang nantinya akan digunakan untuk mengimplementasikan Book Interest Form. Dengan CheckboxListTile, pengguna dapat mengubah dan memilih satu atau lebih genre buku yang mereka gemari.
+This feature implements common widgets such as Container, Text, Column, Row, Icon, and Button. This feature will also implement CheckboxListTile which will later be used to implement the Book Interests Form. With CheckboxListTile, users can modify and select one or more book genres that they like.
 
-### 4. Modul Page Form Rekomendasi Buku (Marthin Daniel Theo Gratia)
+### 4. Book Recommendations Form Page (Marthin Daniel Theo Gratia)
+** Soon to be filled
 
+### 5. Book's Trivia Quiz Form  (Muhammad Faras Baginda)
+This Book Trivia Quiz feature will provide interesting questions about the book. The Trivia Quiz in this mobile app has the same questions as those on the BookMePlease's website. All data related to this quiz will be integrated with the database on the BookMePlease's website. This feature implements simple widgets such as Padding, Layout, and others.
 
-### 5. Modul Form Trivia Quiz Book  (Muhammad Faras Baginda)
-Modul Trivia Quiz Book ini akan memberikan pertanyaan-pertanyaan yang menarik terkait dengan buku. Trivia Quiz pada mobile ini memiliki pertanyaan yang sama dengan yang terdapat pada website. Data - data terkait pengisian quiz ini databasenya akan terintegrasi dengan database pada django website BookMePlease. 
+### 6. Register Form + User Login + Add User's Interest Form (Bima Sudarsono Adinsa)
+Register Form, User Login, and Add User's Interest Form are forms of user authentication to interact with the features contained in BookMePlease as a User. This authentication simultaneously separates and distinguishes the features that a user can use on BookMePlease between registered users and ordinary users who are not registered or anonymous. There are 3 kinds of authentication processes, which is user register, user login, and user logout.
 
-Dalam modul ini nantinya akan mengimplementasikan widget - widget sederhana seperti padding, layout, dan lain - lain. Dan mungkin beberapa widget tambahan yang dapat mendukung pembentukan quiz nantinya.
+There is also a form to add the genre of the book that the user is interested in which will be compiled into the "Add User's Interest" feature. Data related to the user's interest and authentication feature in this mobile app will be integrated with the Django BookMePlease website which was compiled in the previous project.
 
-### 6. Modul Form Register + Login user + Modul Add Interest User (Bima Sudarsono Adinsa)
-Modul Form Register, Login User, Logout User adalah bentuk autentikasi user untuk melakukan interaksi dengan fitur - fitur yang terdapat di dalam BookMePlease sebagai User. Autentikasi ini sekaligus memisahkan dan membedakan fitur-fitur yang terdapat pada BookMePlease antara user yang sudah terdaftar dan user biasa yang tidak terdaftar atau dapat disebut anonim. Proses autentikasi ini terdapat 3 macam yaitu register user, user login, dan user logout. Selain itu saya juga mengerjakan form untuk menambahkan genre buku yang diminati oleh user yang disusun ke dalam modul add interest user. Modul interest dan modul autentikasi user nantinya databasenya akan terintegrasi terhadap django website BookMePlease yang telah disusun pada proyek sebelumnya. 
-
-Modul ini akan mengimplementasikan widget-widget umum seperti, container, layout, padding, column, row, button, dan lain - lain. Pada modul add interest user akan mengimplementasikan multiple checkbox yang digunakan untuk menambahkan genre book sesuai dengan interest user. 
+This feature will implement common widgets such as Containers, Layouts, Padding, Columns, Rows, Buttons, and others. The "Add User's Interest" feature will implement several Checkboxes that are used to add a book's genre according to the user's interests.
