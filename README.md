@@ -1,7 +1,8 @@
 # BookMePlease
-Group Assignment E01 \
+Group Assignment E01
+
 Platform-based Programming Course [CSGE602022] with Django and Flutter \
-Faculty of Computer Science, University of Indonesia 
+Faculty of Computer Science, University of Indonesia \
 Odd Semester 2021/2022
 
 ### Group Members
